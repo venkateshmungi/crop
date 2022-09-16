@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Crop Prediction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 580px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-image: url("https://i.pinimg.com/564x/94/f8/ec/94f8ec1048034727684c9218150015fb.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 495px;
+      height: 100%;
+      padding: 20px;
+    }
+    body{
+  background-image: url('https://wallpapercave.com/wp/wp2832159.jpg') ;
+  background-repeat: no-repeat;
+  background-position: right;
+ }
+    .jumbotron {
+    background-color: silver;
+    color: red;
+    padding: 5px 5px;
+    font-family: Montserrat, sans-serif;
+  }
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: silver;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        padding: 5px;
+      }
+      .row.content {height: auto;} 
+    }
+
+    }
+ 
+ body{
+  background-color: yellow;
+ }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar -->
+<div class="jumbotron text-center">
+  <h2 style="color:firebrick;">CROP PREDICTION</h2>
+</div>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <form action = "{{url_for('predict')}}" method ="POST">
+            <div class="form-group col-sm-12 flex-column d-flex">
+            <label for="trestbps" style="color:darkblue;"><strong>Nitrogen</strong></label>
+            <input type="number" align="left" class="form-control" id="Nitrogen" name="Nitrogen" placeholder="Nitrogen" required>
+            </div>
+
+
+            <div class="form-group col-sm-12 flex-column d-flex">
+            <label for="trestbps" style="color:darkblue"><strong>Phosphorus</strong></label>
+            <input type="number" class="form-control" id="Phosphorus" name="Phosphorus" placeholder="Phosphorus" required>
+            </div>
+
+
+            <div class="form-group col-sm-12 flex-column d-flex">
+            <label for="trestbps" style="color:darkblue"><strong>Potassium</strong></label>
+            <input type="number" class="form-control" id="Potassium" name="Potassium" placeholder="Potassium" required>
+            </div>
+
+
+            <div class="form-group col-sm-12 flex-column d-flex">
+            <label for="trestbps" style="color:darkblue"><strong>Temperature(C)</strong></label>
+            <input type="number" class="form-control" id="Temperature" name="Temperature" placeholder="Temperature(C)" required>
+            </div>
+
+
+            <div class="form-group col-sm-12 flex-column d-flex">
+            <label for="chol" style="color:darkblue"><strong>Humidity</strong></label>
+            <input type="number" class="form-control" id="Humidity" name="Humidity" placeholder="Humidity" required>
+            </div>
+
+
+            <div class="form-group col-sm-12 flex-column d-flex">
+            <label for="exang" style="color:darkblue"><strong>pH Value</strong></label>
+            <input type="number" class="form-control" id="pH" name="pH" placeholder="pH Value" required>
+            </div>
+
+            <div class="form-group col-sm-12 flex-column d-flex">
+            <label for="exang" style="color:darkblue;"><strong>Rainfall</strong></label>
+            <input type="number" class="form-control" id="Rainfall" name="Rainfall" placeholder ="Rainfall"required>
+            </div>
+              <input class="btn btn-primary" type="submit" value="Result">
+          </form>
+         </div>
+         
+      </div>
+    </div>
+</div>
+<footer class="container-fluid">
+<div id ="result">
+              <div><h4 style="color:darkgreen;" class="text-center">{{prediction_text}}</h3></div>
+              <p style="text-align:center; color: red;"><strong>Made By:</strong></p>
+              <p style="text-align:center; color: darkblue;"><strong>VENKATESH_MUNGI</strong></p>
+              <p style="text-align:center; color:deeppink ;"><strong>With the help of Thejaswarup sir</strong></p>
+           </div></footer>
+</body>
+</html>
